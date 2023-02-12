@@ -1,5 +1,5 @@
 from django.db import models
-#from django.conf import settings
+from django.conf import settings
 from django_extensions.db.models import TimeStampedModel
 
 # Create your models here.
@@ -9,7 +9,16 @@ class Tags(models.Model):
 
     def __str__(self):
         """переопределение строкового представления объекта."""
-        return f"Note {self.id}|{self.name}}"
+        return f"Note {self.id}|{self.name}"
+
+class Groups(models.Model):
+    """Группы(типа папок) к заметкам. В принципе они аналогичны тэгам, но будут
+    использоваться для иерархического группирования"""
+    name = models.CharField(max_length=16)
+
+    def __str__(self):
+        """переопределение строкового представления объекта."""
+        return f"Note {self.id}|{self.name}"
 
 class Notes(TimeStampedModel):
     """Таблица заметок"""
@@ -33,6 +42,16 @@ class Notes(TimeStampedModel):
         related_name="tag",
         help_text="Тэг для заметки",  # текст для человека
     )
+
+    group_id = models.ForeignKey(
+        Groups,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="tag",
+        help_text="Название группы в которую входит заметка",  # текст для человека
+    )
+
     def __str__(self):
         """переопределение строкового представления объекта."""
         return f"Note {self.id}|{self.author_id}|{self.content}"
