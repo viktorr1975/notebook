@@ -27,6 +27,7 @@ class Notes(TimeStampedModel):
     content = models.TextField()
     author_id = models.ForeignKey(
         settings.AUTH_USER_MODEL,
+#        default=1,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
@@ -55,6 +56,21 @@ class Notes(TimeStampedModel):
     def __str__(self):
         """переопределение строкового представления объекта."""
         return f"Note {self.id}|{self.author_id}|{self.content}"
+
+    # @staticmethod
+    # def get_products_by_id(ids):
+    #     return Products.objects.filter(id__in=ids)
+    #
+    # @staticmethod
+    # def get_all_products():
+    #     return Products.objects.all()
+    #
+    # @staticmethod
+    # def get_all_products_by_categoryid(category_id):
+    #     if category_id:
+    #         return Products.objects.filter(category=category_id).order_by('-date')
+    #     else:
+    #         return Products.get_all_products()
 
 #    slug = AutoSlugField(populate_from='title')
 #    image = models.ImageField(upload_to ='uploads/', blank=True, null=True)
