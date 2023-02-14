@@ -9,7 +9,11 @@ class Tags(models.Model):
 
     def __str__(self):
         """переопределение строкового представления объекта."""
-        return f"Note {self.id}|{self.name}"
+        return f"{self.id} | {self.name}"
+    class Meta:
+        """установка дополнительных параметров модели"""
+
+        verbose_name_plural = "Tags"
 
 class Groups(models.Model):
     """Группы(типа папок) к заметкам. В принципе они аналогичны тэгам, но будут
@@ -18,7 +22,11 @@ class Groups(models.Model):
 
     def __str__(self):
         """переопределение строкового представления объекта."""
-        return f"Note {self.id}|{self.name}"
+        return f"{self.id} | {self.name}"
+    class Meta:
+        """установка дополнительных параметров модели"""
+
+        verbose_name_plural = "Groups"
 
 class Notes(TimeStampedModel):
     """Таблица заметок"""
@@ -55,7 +63,11 @@ class Notes(TimeStampedModel):
 
     def __str__(self):
         """переопределение строкового представления объекта."""
-        return f"Note {self.id}|{self.author_id}|{self.content}"
+        return f"{self.id} | {self.author_id} | {self.content}"
+    class Meta:
+        """установка дополнительных параметров модели"""
+
+        verbose_name_plural = "Notes"
 
     # @staticmethod
     # def get_products_by_id(ids):

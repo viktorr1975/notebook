@@ -2,6 +2,7 @@
 from rest_framework import viewsets, mixins
 from .models import Notes
 from .serializers import NotesSerializer
+from .pagination import BasePageNumberPagination
 #from .filters import ArticleFilterSet
 from rest_framework.schemas.openapi import AutoSchema
 
@@ -16,6 +17,7 @@ class NotesViewSet(
 ):
     queryset = Notes.objects.all()
     serializer_class = NotesSerializer
+    pagination_class = BasePageNumberPagination
     # filterset_class = NotesFilterSet
 
     schema = AutoSchema(
