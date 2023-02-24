@@ -155,3 +155,6 @@ REST_FRAMEWORK = {
 }
 # Whether to append trailing slashes to URLs.
 APPEND_SLASH = False
+
+#use a custom user model
+AUTH_USER_MODEL = 'myapp.CustomUser'
