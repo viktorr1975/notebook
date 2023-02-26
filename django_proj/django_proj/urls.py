@@ -18,10 +18,10 @@ from django.urls import path, include
 from rest_framework.schemas import get_schema_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path("api/", include("myapp.DRF_urls")),
-
-    path('openapi/', get_schema_view(
+    path('api/drf-auth/', include('rest_framework.urls')),  #добавим ссылки login/logout на страницах drf
+    path('openapi', get_schema_view(
         title="Notes",
         description="API for all things …",
         version="1.0.0"

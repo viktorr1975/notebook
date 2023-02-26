@@ -27,11 +27,12 @@ class NotesSerializer(serializers.ModelSerializer):
     # author = UserSerializer()
 
     # image = Base64ImageField()
-
+    author_id = serializers.HiddenField(default=serializers.CurrentUserDefault())   #работает только на десериализацию
+    #author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
     class Meta:
         model = Notes
         read_only_fields = ["id", "created", "modified"]
-        fields = read_only_fields + ["title", "content"]
+        fields = read_only_fields + ["title", "content", "author_id"]
 
 
         # fields = "__all__"
