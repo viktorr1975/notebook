@@ -2,7 +2,6 @@
 from rest_framework import viewsets, mixins
 from .models import Notes
 from .serializers import NotesSerializer
-from .pagination import BasePageNumberPagination
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .permissions import IsOwner
 
@@ -21,7 +20,11 @@ class NotesViewSet(
 ):
 #    queryset = Notes.objects.all()
     def get_queryset(self):
-        queryset = Notes.objects.all().filter(author_id=self.request.user.id)
+        '''
+        Выборка заметок для аутентифицированного пользователя. Для AnonimousUser:
+        SELECT "myapp_notes"."id", "myapp_notes"."created", "myapp_notes"."modified", "myapp_notes"."title", "myapp_notes"."content", "myapp_notes"."author_id_id", "myapp_notes"."tag_id_id", "myapp_notes"."group_id_id" FROM "myapp_notes" WHERE "myapp_notes"."author_id_id" IS NULL
+        '''
+        queryset = Notes.objects.all().filter(author_id=self.request.user.id).order_by("id")
         return queryset
     # def get_queryset(self):
     #     queryset = Article.objects.all().filter(author=self.request.user).order_by("-id")
@@ -30,7 +33,8 @@ class NotesViewSet(
     #pagination_class = BasePageNumberPagination
     # filterset_class = NotesFilterSet
     permission_classes = (IsAuthenticated, IsOwner)     #доступ только после аутентификации и только владельцу записи в БД. Не работает для ListView
-
+    ordering_fields = ["id", "title"]  # Specifying which fields may be ordered against
+    ordering = ["id"]  # default ordering
 
     schema = AutoSchema(
         tags=["Notes"],

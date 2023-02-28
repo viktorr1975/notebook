@@ -4,6 +4,7 @@
 
 ### Настроить в DRF ###
 
+
 ### [create users programmatically](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#creating_users_and_groups) ###
 rom django.contrib.auth.models import User
 

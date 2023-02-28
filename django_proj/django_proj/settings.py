@@ -148,11 +148,12 @@ REST_FRAMEWORK = {
     #     "rest_framework.filters.SearchFilter",
     #     "rest_framework.filters.OrderingFilter",
     # ],
+    "ORDERING_PARAM": "ordering",
     # "TEST_REQUEST_DEFAULT_FORMAT": "json",
     # "DEFAULT_PAGINATION_CLASS": "articles.pagination.BasePageNumberPagination",
-    # # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     # # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    # "PAGE_SIZE": 5,
+    "PAGE_SIZE": 10,
 }
 # Whether to append trailing slashes to URLs.
 APPEND_SLASH = False
