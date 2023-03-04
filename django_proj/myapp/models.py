@@ -9,6 +9,7 @@ class CustomUser(AbstractUser):
 class Tags(models.Model):
     """Тэги к заметкам."""
     name = models.CharField(max_length=16)
+    created = models.DateTimeField(auto_now_add=True)
     author_id = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         #        default=1,
@@ -27,11 +28,14 @@ class Tags(models.Model):
         """установка дополнительных параметров модели"""
 
         verbose_name_plural = "Tags"
+        ordering = ['created']
 
 class Groups(models.Model):
     """Группы(типа папок) к заметкам. В принципе они аналогичны тэгам, но будут
     использоваться для иерархического группирования"""
     name = models.CharField(max_length=16)
+    content = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
     author_id = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         #        default=1,
@@ -50,6 +54,7 @@ class Groups(models.Model):
         """установка дополнительных параметров модели"""
 
         verbose_name_plural = "Groups"
+        ordering = ['created']
 
 class Notes(TimeStampedModel):
     """Таблица заметок"""
@@ -66,15 +71,16 @@ class Notes(TimeStampedModel):
         related_name="user_notes", # имя, по которому через точку из объекта пользователя можно будет обратиться к списку его заметок
         help_text="Заметки пользователя",  # текст для человека
     )
-    tag_id = models.ForeignKey(
-        Tags,
-        verbose_name='тэги пользователя',
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="user_tags",
-        help_text="Тэг для заметки",    # текст для человека
-    )
+    # tag_id = models.ForeignKey(
+    #     Tags,
+    #     verbose_name='тэги пользователя',
+    #     on_delete=models.SET_NULL,
+    #     null=True,
+    #     blank=True,
+    #     related_name="user_tags",
+    #     help_text="Тэг для заметки",    # текст для человека
+    # )
+    tags = models.ManyToManyField(Tags)
     group_id = models.ForeignKey(
         Groups,
         on_delete=models.SET_NULL,

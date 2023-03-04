@@ -1,8 +1,20 @@
 ### Настроить в settings.py ###
 - ALLOWED_HOSTS = []
+Если вас заботит именно вопрос безопасности запросов к вашему приложению - рекомендую рассмотреть две вещи
+  - настройка разрешенных хостов для запросоа на сайт обслуживаемый django через ALLOWED_HOSTS - https://docs.djangoproject.com/en/4.1/ref/settings/#allowed-hosts
+  - инструмент django-cors-headers ограничивающий источники запросов в ваше приложение (может пригодиться если django у вас выступает только как бэкэнд а фронт в другом приложении) - https://pypi.org/project/django-cors-headers/
 - безопасность пароля к БД настроить
 
 ### Настроить в DRF ###
+
+### testing ###
+- тестировать свой код, не тестировать чужой
+- сделать позитивные тесты, проверяющие реализованный функционал
+- охватить хотя бы 40% функций написанных
+- можно негативные тексты на проверку отсутствия функционала, который должен отсутствовать
+- делать тестирование сложных фукций, простые можно не тестировать
+https://ilyachch.gitbook.io/django-rest-framework-russian-documentation/overview/navigaciya-po-api/testing
+
 
 
 ### [create users programmatically](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#creating_users_and_groups) ###

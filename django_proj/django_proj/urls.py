@@ -19,6 +19,7 @@ from rest_framework.schemas import get_schema_view
 
 urlpatterns = [
     path('admin', admin.site.urls),
+#    path('', include('myapp.Django_urls', namespace="notes")),
     path("api/", include("myapp.DRF_urls")),
     path('api/drf-auth/', include('rest_framework.urls')),  #добавим ссылки login/logout на страницах drf
     path('openapi', get_schema_view(
@@ -27,3 +28,4 @@ urlpatterns = [
         version="1.0.0"
     ), name='openapi-schema'),
 ]
+#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
