@@ -80,7 +80,15 @@ class Notes(TimeStampedModel):
     #     related_name="user_tags",
     #     help_text="Тэг для заметки",    # текст для человека
     # )
-    tags = models.ManyToManyField(Tags)
+    tags = models.ManyToManyField(
+        Tags,
+        blank=True,
+        null=True,  # для исключения сообщиения об обязательном значении в этом поле при добавлении заметки в админской панели.
+        #даже при этих установках в таблице many-to-many полностью запись удаляется при удалении одной из связанных записей
+        related_name="notes_by_tag",
+        # имя, по которому через точку из объекта класса Tag можно будет обратиться к списку заметок
+        help_text="Тэги заметок",  # текст для человека
+    )
     group_id = models.ForeignKey(
         Groups,
         on_delete=models.SET_NULL,

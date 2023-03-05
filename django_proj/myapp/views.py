@@ -1,15 +1,50 @@
 # from django.shortcuts import render
 from rest_framework import viewsets, mixins
-from .models import Notes
+from .models import Notes, Groups
 from .serializers import NotesSerializer
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .permissions import IsOwner
-
+from django.views.generic import (
+    ListView,
+    CreateView,
+    DetailView,
+    UpdateView,
+    DeleteView,
+)
 # from .filters import ArticleFilterSet
 from rest_framework.schemas.openapi import AutoSchema
 
+from django.shortcuts import render, get_object_or_404
 
-# DRF
+def home(request):
+    return render(request, '_index.html', {
+        'categories': Groups.objects.all()
+        #'categories': Groups.objects.all().filter(author_id=3).order_by("id")
+    })
+
+
+def category_detail(request, group_id):
+    category = get_object_or_404(Groups, id=group_id)
+    return render(request, 'detail.html', {
+        'category': category
+    })
+
+
+class AllNotesListView(ListView):
+    """Представление для отображения списка всех заметок"""
+
+    model = Notes
+    context_object_name = "notes"
+    template_name = "all_notes.html"
+
+class NoteDetailView(DetailView):
+    """Представление для отображения одной заметки."""
+
+    model = Notes
+    context_object_name = "notes"
+    template_name = "note_detail.html"
+
+# ************** DRF*************
 class NotesViewSet(
     mixins.ListModelMixin,  # GET /notes
     mixins.CreateModelMixin,  # POST /notes

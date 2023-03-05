@@ -16,10 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.schemas import get_schema_view
+from myapp.views import AllNotesListView, NoteDetailView, home, category_detail
 
 urlpatterns = [
     path('admin', admin.site.urls),
 #    path('', include('myapp.Django_urls', namespace="notes")),
+    path('', home, name='home'),
+    path('category/<category_id>', category_detail, name='detail'),
+#    path("", AllNotesListView.as_view(), name="all-notes"),
+    path("note/<int:pk>", NoteDetailView.as_view(), name="note-detail"),
     path("api/", include("myapp.DRF_urls")),
     path('api/drf-auth/', include('rest_framework.urls')),  #добавим ссылки login/logout на страницах drf
     path('openapi', get_schema_view(
