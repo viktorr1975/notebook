@@ -5,6 +5,9 @@
   - инструмент django-cors-headers ограничивающий источники запросов в ваше приложение (может пригодиться если django у вас выступает только как бэкэнд а фронт в другом приложении) - https://pypi.org/project/django-cors-headers/
 - безопасность пароля к БД настроить
 
+### Настроить в Django ###
+Добавить декоратор аутентифицированный пользователь только во view
+
 ### Настроить в DRF ###
 
 ### testing ###
@@ -14,7 +17,8 @@
 - можно негативные тексты на проверку отсутствия функционала, который должен отсутствовать
 - делать тестирование сложных фукций, простые можно не тестировать
 https://ilyachch.gitbook.io/django-rest-framework-russian-documentation/overview/navigaciya-po-api/testing
-
+#### протестировать: ####
+- NotesSerializer.validate_tags()
 
 
 ### [create users programmatically](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#creating_users_and_groups) ###

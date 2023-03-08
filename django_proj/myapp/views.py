@@ -1,7 +1,7 @@
 # from django.shortcuts import render
 from rest_framework import viewsets, mixins
 from .models import Notes, Groups
-from .serializers import NotesSerializer
+from .serializers import NotesSerializer, GroupsSerializer
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .permissions import IsOwner
 from django.views.generic import (
@@ -78,4 +78,41 @@ class NotesViewSet(
     )
     def create(self, request, *args, **kwargs):
         #request.data["author"] = request.user.pk
+        return super().create(request, *args, **kwargs)
+
+
+class GroupsViewSet(
+    mixins.ListModelMixin,  # GET /groups
+    mixins.CreateModelMixin,  # POST /groups
+    mixins.RetrieveModelMixin,  # GET /groups/1
+    mixins.DestroyModelMixin,  # DELETE /groups/1
+    mixins.UpdateModelMixin,  # PUT /groups/1
+    viewsets.GenericViewSet,
+):
+    '''
+    Выборка  групп для аутентифицированного пользователя.
+    '''
+    #    queryset = Notes.objects.all()
+    def get_queryset(self):
+        queryset = Groups.objects.all().filter(author_id=self.request.user.id).order_by("id")
+        return queryset
+
+    # def get_queryset(self):
+    #     queryset = Article.objects.all().filter(author=self.request.user).order_by("-id")
+    #     return queryset
+    serializer_class = GroupsSerializer
+    # pagination_class = BasePageNumberPagination
+    # filterset_class = NotesFilterSet
+    permission_classes = (IsAuthenticated, IsOwner)  # доступ только после аутентификации и только владельцу записи в БД. Не работает для ListView
+    ordering_fields = ["id", "name"]  # Specifying which fields may be ordered against
+    ordering = ["id"]  # default ordering
+
+    schema = AutoSchema(
+        tags=["Groups"],
+        component_name="Groups",
+        operation_id_base="Groups",
+    )
+
+    def create(self, request, *args, **kwargs):
+        # request.data["author"] = request.user.pk
         return super().create(request, *args, **kwargs)
