@@ -94,7 +94,7 @@ class Notes(TimeStampedModel):
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name="tag",
+        related_name="notes_by_group",
         help_text="Название группы в которую входит заметка",  # текст для человека
     )
 
