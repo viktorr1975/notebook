@@ -7,7 +7,7 @@
 
 <div x-data="getNotes()">
     <h3 class="text-center mt-5" style="color:#777">заметки в категории <span class="fw-bold">{{ category.name }}</span>
-            пользователя <span class="fw-bold">{{ request.user.username }}</span></h3>
+            пользователя <span class="fw-bold">{{ request.user.username | default:'Guest' }}</span></h3>
     <form id="note-form">
         {% csrf_token %}
     </form>

@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 #import os
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -59,7 +59,8 @@ ROOT_URLCONF = 'django_proj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+#        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],      #для шаблонов login/logout
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -162,3 +163,8 @@ APPEND_SLASH = False
 
 #use a custom user model
 AUTH_USER_MODEL = 'myapp.CustomUser'
+
+# Пользователи будут перенаправлены на главную страницу после входа в систему
+LOGIN_REDIRECT_URL = "home"
+#перенаправит пользователей обратно на главную страницу, как только они выйдут из системы
+LOGOUT_REDIRECT_URL = "login"

@@ -1,4 +1,5 @@
 # from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets, mixins
 from .models import Notes, Groups
 from .serializers import NotesSerializer, GroupsSerializer
@@ -16,13 +17,14 @@ from rest_framework.schemas.openapi import AutoSchema
 
 from django.shortcuts import render, get_object_or_404
 
+@login_required     #If the user isn’t logged in, redirect to settings.LOGIN_URL
 def home(request):
     return render(request, '_index.html', {
         'categories': Groups.objects.all()
         #'categories': Groups.objects.all().filter(author_id=3).order_by("id")
     })
 
-
+@login_required
 def category_detail(request, group_id):
     category = get_object_or_404(Groups, id=group_id)
     return render(request, 'detail.html', {

@@ -8,7 +8,7 @@
 
 
 <div x-data="getCategories()">
-   <h3 class="text-center mt-5" style="color:#777">все категории заметок пользователя <span class="fw-bold">{{ request.user.username }}</span></h3>
+   <h3 class="text-center mt-5" style="color:#777">все категории заметок пользователя <span class="fw-bold">{{ request.user.username | default:'Guest' }}</span></h3>
     <form id="category-form">
         {% csrf_token %}
     </form>
