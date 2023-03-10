@@ -8,7 +8,7 @@ This can be done easily with the Python package Python Decouple.
 https://ordinarycoders.com/blog/article/django-beginners-guide
 
 ### Настроить в Django ###
-Добавить декоратор аутентифицированный пользователь только во view
+
 
 ### Настроить в DRF ###
 
@@ -24,17 +24,6 @@ https://ordinarycoders.com/blog/article/django-testing
 #### протестировать: ####
 - NotesSerializer.validate_tags()
 
-
-### [create users programmatically](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#creating_users_and_groups) ###
-rom django.contrib.auth.models import User
-
-# Create user and save to the database
-user = User.objects.create_user('myusername', 'myemail@crazymail.com', 'mypassword')
-
-# Update fields and then save again
-user.first_name = 'Tyrone'
-user.last_name = 'Citizen'
-user.save()
 
 ### Adding Log In To The Browsable API ###
 https://docs.djangoproject.com/en/4.1/howto/logging/
