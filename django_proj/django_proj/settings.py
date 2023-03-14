@@ -87,6 +87,9 @@ DATABASES = {
         'PASSWORD': 'viktorr1975',
         'HOST': 'localhost',
         'PORT': '',
+        'TEST': {
+            'NAME': 'mytestdatabase',
+        },
     }
 }
 
@@ -160,6 +163,67 @@ REST_FRAMEWORK = {
     # # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
 }
+
+#System logging
+#loggin reference - https://docs.djangoproject.com/en/4.1/ref/logging/#logging-ref
+#-------------------------------------------------------------------------------
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s '
+        },
+        # 'django.server': {
+        #     '()': 'django.utils.log.ServerFormatter',
+        #     'format': '[{server_time}] {message} {pathname} {funcName}',
+        #     'style': '{',
+        # }
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}:{message}] {request}',
+            'style': '{',
+        }
+    },
+    'handlers': {                               #куда передовать сообщиния
+        'console': {
+            'class': 'logging.StreamHandler',   #сообщения передаём в консоль
+            'level': 'INFO',                    #сообщения уровня INFO, WARNING, ERROR, CRITICAL передаём
+        },
+        'django.server': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server',
+        },
+        # use this handler to swallow all logging - this is the nuclear option
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+    },
+    # 'formatters': {
+    #     'simple': {
+    #         'format': '[%(asctime)s] %(levelname)s %(message)s',
+    #         'datefmt': '%Y-%m-%d %H:%M:%S'
+    #     },
+    #     'verbose': {
+    #         'format': '[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s',
+    #         'datefmt': '%Y-%m-%d %H:%M:%S'
+    #     },
+    # },
+
+    'loggers': {
+        'django.server': {              #  Log messages related to the handling of requests received by the server invoked by the runserver command.
+            'handlers': ['django.server'],    # handler
+            'level': 'INFO',            # сообщения уровня INFO, WARNING, ERROR, CRITICAL передаём
+            'propagate': False         # не передовать сообщиния дальше по иерархии сборщиков сообщений
+        },
+    },
+}
+
 # Whether to append trailing slashes to URLs.
 APPEND_SLASH = False
 

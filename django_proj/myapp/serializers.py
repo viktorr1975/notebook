@@ -50,7 +50,7 @@ class NotesSerializer(serializers.ModelSerializer):
         if value:   #not None (JSON null)
             for tag in value:
                 if CustomUser.objects.all().filter(id=tag.author_id_id)[0] != self.context['request'].user:
-                    raise serializers.ValidationError("Группа пользователю не принадлежит")
+                    raise serializers.ValidationError("Тэг пользователю не принадлежит")
         return value
 
     # def to_internal_value(self, data):

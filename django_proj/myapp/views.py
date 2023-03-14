@@ -5,14 +5,14 @@ from .models import Notes, Groups
 from .serializers import NotesSerializer, GroupsSerializer
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .permissions import IsOwner
-from django.views.generic import (
-    ListView,
-    CreateView,
-    DetailView,
-    UpdateView,
-    DeleteView,
-)
-# from .filters import ArticleFilterSet
+# from django.views.generic import (
+#     ListView,
+#     CreateView,
+#     DetailView,
+#     UpdateView,
+#     DeleteView,
+# )
+#from .filters import ArticleFilterSet
 from rest_framework.schemas.openapi import AutoSchema
 
 from django.shortcuts import render, get_object_or_404
@@ -32,19 +32,19 @@ def category_detail(request, group_id):
     })
 
 
-class AllNotesListView(ListView):
-    """Представление для отображения списка всех заметок"""
-
-    model = Notes
-    context_object_name = "notes"
-    template_name = "all_notes.html"
-
-class NoteDetailView(DetailView):
-    """Представление для отображения одной заметки."""
-
-    model = Notes
-    context_object_name = "notes"
-    template_name = "note_detail.html"
+# class AllNotesListView(ListView):
+#     """Представление для отображения списка всех заметок"""
+#
+#     model = Notes
+#     context_object_name = "notes"
+#     template_name = "all_notes.html"
+#
+# class NoteDetailView(DetailView):
+#     """Представление для отображения одной заметки."""
+#
+#     model = Notes
+#     context_object_name = "notes"
+#     template_name = "note_detail.html"
 
 # ************** DRF*************
 class NotesViewSet(

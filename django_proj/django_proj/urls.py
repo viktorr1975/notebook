@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from rest_framework.schemas import get_schema_view
-from myapp.views import AllNotesListView, NoteDetailView, home, category_detail
+from myapp.views import home, category_detail   #AllNotesListView, NoteDetailView,
 
 urlpatterns = [
     path('admin', admin.site.urls),

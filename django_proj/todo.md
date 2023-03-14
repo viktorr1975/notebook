@@ -8,8 +8,18 @@ This can be done easily with the Python package Python Decouple.
 https://ordinarycoders.com/blog/article/django-beginners-guide
 
 ### Настроить в Django ###
-
-
+не сделано:
+- удаление категорий
+- удаление заметок
+- редактирование категорий
+- редактирование заметок
+- работа с тэгами
+- должна быть группа для заметок без группы
+[Easy Tags Input Component For Bootstrap 5/4 – Tags.js](https://www.cssscript.com/tags-input-bootstrap-5/)
++ https://codepen.io/dannibla/pen/QGLyBW
++ https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/
+[bootstrap 5 tags input with jquery, bootstrap 5 tags input with Tagify(tag.js)](https://larainfo.com/blogs/bootstrap-5-tags-input-examples)
+[lekoala /bootstrap5-tags ](https://github.com/lekoala/bootstrap5-tags)
 ### Настроить в DRF ###
 
 ### testing ###
@@ -22,9 +32,15 @@ https://ilyachch.gitbook.io/django-rest-framework-russian-documentation/overview
 How to write tests in Django: Best practices for testing in Django
 https://ordinarycoders.com/blog/article/django-testing
 #### протестировать: ####
-- NotesSerializer.validate_tags()
+- NotesSerializer.validate_tags(), для этотого:
+  - проверить отсутствие доступа POST http://0.0.0.0:8000/api/notes для анонима
+  - проверить наличие доступа POST http://0.0.0.0:8000/api/notes для авторизованного пользователя
+  - невозможность сохранить запись с чужой группой POST http://0.0.0.0:8000/api/notes
+  - невозможность сохранить запись с чужим тэгом POST http://0.0.0.0:8000/api/notes
 
+py .\manage.py dumpdata <app_name>.<ModelName>  # выгрузка дамп данных из ДБ
 
-### Adding Log In To The Browsable API ###
-https://docs.djangoproject.com/en/4.1/howto/logging/
-[DRF.Adding login to the Browsable API](https://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/#adding-login-to-the-browsable-api)
+py .\manage.py loaddata <path_to_fixture_file>  # загрузка в базу данных
+там джсон создается сам и при переопределение в сетингах ДБ на другую, данные подгружаюся
+но надо все модели мигрировать сначала, прежде чем их дампом даных загружать
+[Fixture loading](https://docs.djangoproject.com/en/4.1/topics/testing/tools/#fixture-loading)
