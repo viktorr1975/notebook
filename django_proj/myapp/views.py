@@ -26,7 +26,7 @@ def home(request):
 
 @login_required
 def category_detail(request, group_id):
-    category = get_object_or_404(Groups, id=group_id)
+    category = get_object_or_404(Groups, id=group_id)   #не делаю фильтрацию по пользоватлею, т.к. подразумевается, что id уникальные и не могут дублироваться у пользователей
     return render(request, 'detail.html', {
         'category': category
     })
