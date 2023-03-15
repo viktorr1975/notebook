@@ -20,7 +20,7 @@ from django.shortcuts import render, get_object_or_404
 @login_required     #If the user isn’t logged in, redirect to settings.LOGIN_URL
 def home(request):
     return render(request, '_index.html', {
-        'categories': Groups.objects.all()
+        'categories': Groups.objects.all().filter(author_id=request.user.id)
         #'categories': Groups.objects.all().filter(author_id=3).order_by("id")
     })
 
