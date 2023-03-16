@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Notes, Groups, CustomUser
+from .models import Notes, Groups, Tags, CustomUser
 from django.contrib.auth import get_user_model
 #from drf_extra_fields.fields import Base64ImageField
 
@@ -102,3 +102,13 @@ class GroupsSerializer(serializers.ModelSerializer):
         model = Groups
         read_only_fields = ["id", "created"]
         fields = read_only_fields + ["name", "content", "author_id"]
+
+class TagsSerializer(serializers.ModelSerializer):
+    """Сериализатор по модели Tags"""
+
+    author_id = serializers.HiddenField(default=serializers.CurrentUserDefault())   #работает только на десериализацию(сохранение)
+    #author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
+    class Meta:
+        model = Tags
+        read_only_fields = ["id", "created"]
+        fields = read_only_fields + ["name", "author_id"]

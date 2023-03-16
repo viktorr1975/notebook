@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from rest_framework.schemas import get_schema_view
-from myapp.views import home, category_detail   #AllNotesListView, NoteDetailView,
+from myapp.views import home, category_detail #AllTagsListView, TagDetailView   #AllNotesListView, NoteDetailView,
 
 urlpatterns = [
     path('admin', admin.site.urls),
@@ -28,6 +28,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),         #Add Django site authentication urls (for login, logout, password management)
 #    path("", AllNotesListView.as_view(), name="all-notes"),
 #    path("note/<int:pk>", NoteDetailView.as_view(), name="note-detail"),
+#     path("tags", AllTagsListView.as_view(), name="all-tags"),
+#     path("tag/<int:pk>", TagDetailView.as_view(), name="tag-detail"),
     path("api/", include("myapp.DRF_urls")),
     path('api/drf-auth/', include('rest_framework.urls')),  #добавим ссылки login/logout на страницах drf
     path('openapi', get_schema_view(

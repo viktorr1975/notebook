@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Список всех заметок</h3>
+    {% for tag in tags %}
+        <div class="tasks mb-4">
+            <div class="tasks-body">
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+ <a href="{% url 'tag-detail' tag.id %}">{{ tag.name }}</a>
+{% comment %}
+                    <a href="{% url 'tag-detail' tag.id %}">{{ tags.name }}</a>
+					 <div  class="task-controls">
+						<a href="{%url 'note-delete' note.id %}"><i class="bi bi-trash"></i></a>
+						<a href="{%url 'note-update' note.id %}"><i class="bi bi-pencil-square"></i></a>
+                        <span class="badge bg-primary rounded-pill">{{ notes.pk }}</span>
+{% endcomment %}
+					 </div>
+
+                  </li>
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,9 +1,9 @@
 # from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets, mixins
-from .models import Notes, Groups
-from .serializers import NotesSerializer, GroupsSerializer
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from .models import Notes, Groups, Tags
+from .serializers import NotesSerializer, GroupsSerializer, TagsSerializer
+from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwner
 # from django.views.generic import (
 #     ListView,
@@ -31,6 +31,19 @@ def category_detail(request, group_id):
         'category': category
     })
 
+# class AllTagsListView(ListView):
+#     """Представление для отображения списка всех заметок"""
+#
+#     model = Tags
+#     context_object_name = "tags"
+#     template_name = "all_tags.html"
+#
+# class TagDetailView(DetailView):
+#     """Представление для отображения одной заметки."""
+#
+#     model = Tags
+#     context_object_name = "tag"
+#     template_name = "tag_detail.html"
 
 # class AllNotesListView(ListView):
 #     """Представление для отображения списка всех заметок"""
@@ -118,3 +131,35 @@ class GroupsViewSet(
     def create(self, request, *args, **kwargs):
         # request.data["author"] = request.user.pk
         return super().create(request, *args, **kwargs)
+
+class TagsViewSet(
+    mixins.ListModelMixin,  # GET /tags
+    mixins.CreateModelMixin,  # POST /tags
+    mixins.RetrieveModelMixin,  # GET /tags/1
+    mixins.DestroyModelMixin,  # DELETE /tags/1
+    mixins.UpdateModelMixin,  # PUT /tags/1
+    viewsets.GenericViewSet,
+):
+        '''
+        Выборка  тэгов для аутентифицированного пользователя.
+        '''
+
+        def get_queryset(self):
+            queryset = Tags.objects.all().filter(author_id=self.request.user.id).order_by("id")
+            return queryset
+
+        serializer_class = TagsSerializer
+        # pagination_class = BasePageNumberPagination
+        permission_classes = (IsAuthenticated, IsOwner)  # доступ только после аутентификации и только владельцу записи в БД. Не работает для ListView
+        ordering_fields = ["id", "name"]  # Specifying which fields may be ordered against
+        ordering = ["id"]  # default ordering
+
+        schema = AutoSchema(
+            tags=["Tags"],
+            component_name="Tags",
+            operation_id_base="Tags",
+        )
+
+        def create(self, request, *args, **kwargs):
+            # request.data["author"] = request.user.pk
+            return super().create(request, *args, **kwargs)
