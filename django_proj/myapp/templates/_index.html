@@ -8,14 +8,14 @@
 
 
 <div x-data="getCategories()">
-   <h3 class="text-center mt-5" style="color:#777">все категории заметок пользователя <span class="fw-bold">{{ request.user.username | default:'Guest' }}</span></h3>
+   <h3 class="text-center mt-5" style="color:#777">все группы заметок пользователя <span class="fw-bold">{{ request.user.username | default:'Guest' }}</span></h3>
     <form id="category-form">
         {% csrf_token %}
     </form>
     <div class="container pt-5">
 <div class="input-group px-5">
-  <input x-model="newCategory" class="form-control" placeholder="Название категории">
-  <input x-model="newDescription" class="form-control" placeholder="Описание категории">
+  <input x-model="newCategory" class="form-control" placeholder="Название группы">
+  <input x-model="newDescription" class="form-control" placeholder="Описание группы">
   <button @click="addCategory(newCategory, newDescription)" type="button" class="btn btn-primary"><i class="uil uil-notes"></i> Добавить категорию</button>
 </div>
 <div class="container">  <!--class="card-group p-5"> -->

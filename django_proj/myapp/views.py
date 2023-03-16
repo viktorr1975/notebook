@@ -31,6 +31,12 @@ def category_detail(request, group_id):
         'category': category
     })
 
+@login_required
+def tags_detail(request):
+    return render(request, 'tags.html', {
+        'tags': Tags.objects.all().filter(author_id=request.user.id)
+    })
+
 # class AllTagsListView(ListView):
 #     """Представление для отображения списка всех заметок"""
 #
@@ -91,9 +97,9 @@ class NotesViewSet(
         component_name="Notes",
         operation_id_base="Notes",
     )
-    def create(self, request, *args, **kwargs):
-        #request.data["author"] = request.user.pk
-        return super().create(request, *args, **kwargs)
+    # def create(self, request, *args, **kwargs):
+    #     #request.data["author"] = request.user.pk
+    #     return super().create(request, *args, **kwargs)
 
 
 class GroupsViewSet(
@@ -128,9 +134,9 @@ class GroupsViewSet(
         operation_id_base="Groups",
     )
 
-    def create(self, request, *args, **kwargs):
-        # request.data["author"] = request.user.pk
-        return super().create(request, *args, **kwargs)
+    # def create(self, request, *args, **kwargs):
+    #     # request.data["author"] = request.user.pk
+    #     return super().create(request, *args, **kwargs)
 
 class TagsViewSet(
     mixins.ListModelMixin,  # GET /tags
@@ -160,6 +166,6 @@ class TagsViewSet(
             operation_id_base="Tags",
         )
 
-        def create(self, request, *args, **kwargs):
-            # request.data["author"] = request.user.pk
-            return super().create(request, *args, **kwargs)
+        # def create(self, request, *args, **kwargs):
+        #     # request.data["author"] = request.user.pk
+        #     return super().create(request, *args, **kwargs)
