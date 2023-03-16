@@ -1,0 +1,122 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Приложение Notes
+{% endblock %}
+
+{% block content %}
+
+
+<div x-data="getTags()">
+   <h3 class="text-center mt-5" style="color:#777">все тэги пользователя <span class="fw-bold">{{ request.user.username | default:'Guest' }}</span></h3>
+    <form id="tags-form">
+        {% csrf_token %}
+    </form>
+    <div class="container pt-5">
+<div class="input-group px-5">
+  <input x-model="newTag" class="form-control" placeholder="Название тэга">
+  <button @click="addTag(newTag)" type="button" class="btn btn-primary"><i class="uil uil-notes"></i> Добавить тэг</button>
+</div>
+<div class="container">  <!--class="card-group p-5"> -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+   <template x-for="tag in tags">
+    <div class="col">
+     <div class="card h-100 bg-light">
+      <div class="card-header">
+       <h4 class="card-title text-center my-2">
+            <input x-model="tag.name" class="form-control" >
+<!--
+           <a x-text="category.title" x-bind:href="'/category/'+category.id"></a>
+-->
+       </h4>
+      </div>
+<!--
+    <div class="card-body">
+      <textarea x-model="category.description" class="form-control" ></textarea>
+    </div>
+-->
+    <div class="card-footer">
+         <div class="btn-group" role="group">
+<!--
+          <button type="button" class="btn btn-primary btn-sm">
+           <a x-bind:href="'/tags/'+tags.id" style="text-decoration: none; color:#fff;"><i class="uil uil-search"></i> Открыть</a>
+          </button>
+-->
+             <button @click="removeTag(tag.id)"
+             class="btn btn-danger btn-sm float-end"><i class="uil uil-trash-alt"></i> Удалить</button>
+             <button @click="updateTag(tag.id, tag.name)"
+             class="btn btn-danger btn-sm float-end"><i class="uil uil-edit-alt"></i> Сохранить</button>
+         </div>
+      </div>
+     </div>
+    </div>
+   </template>
+</div>
+</div>
+
+
+</div>
+</div>
+<script>
+
+
+const getTags = () => {
+    return {
+        newTag: '',
+        tags: [
+            {% for tag in tags %}
+            { 'name': '{{ tag.name }}', 'id': '{{ tag.id }}'},
+            {% endfor %}
+        ]
+    }
+};
+
+const csrftoken = document.querySelector('#tags-form > input').value;
+
+
+const addTag = async (name) => {
+    try {
+    const res = await axios.post('/api/tags',
+        { name:name },
+        { headers: { 'X-CSRFToken': csrftoken }}
+        );
+    location.reload();
+      } catch (e) {
+        console.error(e);
+      }
+};
+
+const updateTag = async (TagId, name) => {
+    try {
+    const res = await axios.patch('/api/tags/' + TagId,
+        { name:name },
+        { headers: { 'X-CSRFToken': csrftoken }}
+        );
+    location.reload();
+      } catch (e) {
+        console.error(e);
+      }
+};
+
+const removeTag = async TagId => {
+    try {
+    const res = await axios.delete('/api/tags/' + TagId,
+        { headers: { 'X-CSRFToken': csrftoken }}
+        );
+    location.reload();
+      } catch (e) {
+        console.error(e);
+      }
+};
+
+</script>
+
+{% endblock %}
+
+
+
+
+
+
+
+
