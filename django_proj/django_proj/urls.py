@@ -17,14 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from rest_framework.schemas import get_schema_view
-from myapp.views import home, category_detail, tags_detail #AllTagsListView, TagDetailView   #AllNotesListView, NoteDetailView,
+from myapp.views import home, category_detail, tags_detail, edit_note_tags #AllTagsListView, TagDetailView   #AllNotesListView, NoteDetailView,
 
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin', admin.site.urls), #все группы заметок пользователя
 #    path('', include('myapp.Django_urls', namespace="notes")),
     path('', home, name='home'),
-    path('category/<int:group_id>', category_detail, name='detail'),
-    path('tags', tags_detail, name='tags'),
+    path('category/<int:group_id>', category_detail, name='detail'),    #все заметки пользователя
+    path('tags', tags_detail, name='tags'),                             #все тэги пользователя для данной заметки
+    path("note/<int:note_id>", edit_note_tags, name="edit_note_tags"),      #добавляет/удаляем тэги к заметке пользователя
 #    path('accounts/login/', auth_views.LoginView.as_view()),        #set default  settings.LOGIN_URL
     path('accounts/', include('django.contrib.auth.urls')),         #Add Django site authentication urls (for login, logout, password management)
 #    path("", AllNotesListView.as_view(), name="all-notes"),

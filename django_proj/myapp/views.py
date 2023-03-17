@@ -1,7 +1,9 @@
-# from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets, mixins
 from .models import Notes, Groups, Tags
+from .forms import NoteForm
+from django.http import HttpRequest, HttpResponse
 from .serializers import NotesSerializer, GroupsSerializer, TagsSerializer
 from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwner
@@ -27,6 +29,8 @@ def home(request):
 @login_required
 def category_detail(request, group_id):
     category = get_object_or_404(Groups, id=group_id)   #не делаю фильтрацию по пользоватлею, т.к. подразумевается, что id уникальные и не могут дублироваться у пользователей
+    for note in category.notes_by_group.all():
+        print(note)
     return render(request, 'detail.html', {
         'category': category
     })
@@ -36,6 +40,24 @@ def tags_detail(request):
     return render(request, 'tags.html', {
         'tags': Tags.objects.all().filter(author_id=request.user.id)
     })
+
+@login_required
+def edit_note_tags(request: HttpRequest, note_id) -> HttpResponse:
+    # dictionary for initial data with
+    # field names as keys
+    context = {}
+    note = get_object_or_404(Notes, id=note_id)   # fetch the object related to passed id
+    form = NoteForm(request.POST or None, instance=note)  # pass the object as instance in form
+    if request.method == "POST":
+        if form.is_valid():
+            note = form.save()  # form.save() creates a note from the form
+            #return redirect("post_detail", slug=post.slug)
+            return redirect("home")
+    #context = {"form": form, "note": note, "edit_mode": False}
+    #не проверяем наличия request.user.id, т.к. форма отображается только аутентифицированным пользователям
+    form.fields["tags"].queryset = Tags.objects.filter(author_id=request.user.id).order_by("id") #в форме отобразим тэги пользователя
+    context = {"form": form}
+    return render(request, "post_form.html", context)
 
 # class AllTagsListView(ListView):
 #     """Представление для отображения списка всех заметок"""

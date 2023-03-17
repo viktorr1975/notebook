@@ -35,15 +35,19 @@
             </div>
 
             <div class="card-body">
-
+                <textarea x-model="note.tags" class="form-control" ></textarea>
             </div>
 
            <div class="card-footer">
                <div class="btn-group" role="group">
-            <button @click="removeNote(note.id)" class="btn btn-danger"><i class="uil uil-trash-alt"></i> Удалить</button></div>
-             <button @click="updateNote({{ category.id }}, note.id, note.title, note.content)"
-             class="btn btn-danger btn-sm float-end"><i class="uil uil-edit-alt"></i> Сохранить</button>
-            </div>
+                  <button type="button" class="btn btn-primary btn-sm">
+                   <a x-bind:href="'/note/'+note.id" style="text-decoration: none; color:#fff;"><i class="uil uil-search"></i> Открыть</a>
+                  </button>
+                    <button @click="removeNote(note.id)" class="btn btn-danger"><i class="uil uil-trash-alt"></i> Удалить</button>
+                     <button @click="updateNote({{ category.id }}, note.id, note.title, note.content)"
+                     class="btn btn-danger btn-sm float-end"><i class="uil uil-edit-alt"></i> Сохранить</button>
+                </div>
+           </div>
            </div>
          </div>
        </template>
@@ -54,7 +58,6 @@
 
 
 <script>
-
 const csrftoken = document.querySelector('#note-form > input').value;
 
 
@@ -64,7 +67,7 @@ const getNotes = () => {
         newContent: '',
         notes: [
             {% for note in category.notes_by_group.all %}
-                { 'title': '{{ note.title }}', 'id': '{{ note.id }}', 'content': '{{ note.content }}' },
+                { 'title': '{{ note.title }}', 'id': '{{ note.id }}', 'content': '{{ note.content |escapejs}}', 'tags': '{{ note.tags }}' },
             {% endfor %}
         ]
     }
@@ -104,7 +107,6 @@ const updateNote = async (categoryId, noteId, title, content) => {
         console.error(e);
       }
 };
-
 
 </script>
 
