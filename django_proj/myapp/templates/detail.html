@@ -30,12 +30,13 @@
 -->
                  <input x-model="note.title" class="form-control" >
             </div>
+
             <div class="card-body">
                 <textarea x-model="note.content" class="form-control" ></textarea>
             </div>
 
-            <div class="card-body">
-                <textarea x-model="note.tags" class="form-control" ></textarea>
+            <div class="text-primary text-center p-2">
+                <span x-text="note.tags"></span>
             </div>
 
            <div class="card-footer">
@@ -67,7 +68,8 @@ const getNotes = () => {
         newContent: '',
         notes: [
             {% for note in category.notes_by_group.all %}
-                { 'title': '{{ note.title }}', 'id': '{{ note.id }}', 'content': '{{ note.content |escapejs}}', 'tags': '{{ note.tags }}' },
+                { 'title': '{{ note.title }}', 'id': '{{ note.id }}', 'content': '{{ note.content |escapejs}}',
+                 'tags':[ {% for tag in note.tags.all %} ' {{ tag.name }}', {% endfor %} ]},
             {% endfor %}
         ]
     }

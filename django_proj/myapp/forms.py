@@ -5,8 +5,8 @@ from . import models
 class CustomMMCF(forms.ModelMultipleChoiceField):
     ''' Customises the labels for checkboxes    '''
     pass
-    # def label_from_instance(self, member):
-    #     return "% s" % member.name
+    def label_from_instance(self, member):
+        return "% s" % member.name
 
 class NoteForm(forms.ModelForm):
     class Meta:
