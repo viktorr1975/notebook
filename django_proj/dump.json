@@ -1,0 +1,1140 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "0h4kccix9sx2ig47qf4ywgiqsjcvz8rt",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQRP-FsyHAImw9evcbyMJSqRpISnsy_rtt0oMeZ96beYtA61LC2vMcJhYXYcTpt4uUnrnugB9U702mVpd5inJX5EG7vDXOr-vh_h0U6mVbk9VODSpzjoiMPiEQA2AajXGAoGzM0VmyTlvnzwCJ9ZaVNyNa0IP4fAHTaTbj:1pVxWG:DYCNzIlhYkXHe5yqaCXfXDv0FsEgEfM4V6n0FQDJaMs",
+    "expire_date": "2023-03-11T16:35:32.324Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7ct1pe9qn1ebsnah6u23aksatfn7xvrc",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlmRnRgvJT1nsLw_HECOFCcV4u4kUgroRvPezNukvC4lrU3mNLK5GG9Ovx1mekrdAT9yvU-WprrMI9pdsQdt9jaxvK6H-3dQcivb2pGKCjKRAjiIkfuAPmKEEHrXdTHkuAUHAB4dMTIPiqxuEDkrqvl8AQKlOO4:1pWozG:gDfRMEumFYevqGdvqbtGwvkucPmx1TpplHyeqKCrTvA",
+    "expire_date": "2023-03-14T01:41:02.817Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ddzmtcy4rhgxyfh7gt3kykebnhx4l8p6",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDG1y69xvIDFCpGkhKuzL-uzbpQrf3nHNfLOK21riNssQ5szMT7PS7EaZHaTvId2y3zlNv6zIT3xV-0MGvPZfn5XD_DiqO-q1BkCXrtDMeTPFUrFMoQFHOoFEWr3KSUjk3BUAIQgUQRloE8KgnAvb-AL6uNsI:1pYkNw:Z5CqMXlkz4LZUaLQQCsR-zRHk9zT7suFfz5wI76muIA",
+    "expire_date": "2023-03-19T09:10:28.940Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pz0fjagb1b44l4xtnilmto3y8328rd5m",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlmRnRgvJT1nsLw_HECOFCcV4u4kUgroRvPezNukvC4lrU3mNLK5GG9Ovx1mekrdAT9yvU-WprrMI9pdsQdt9jaxvK6H-3dQcivb2pGKCjKRAjiIkfuAPmKEEHrXdTHkuAUHAB4dMTIPiqxuEDkrqvl8AQKlOO4:1pcunv:c0kNIdbTlkAtrkQmYu4BH9bGXAmeyyFF0vwlLtkirZw",
+    "expire_date": "2023-03-30T21:06:31.276Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qj2lgm8na2advwbq67rbmcwadwdk81h5",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDG1y69xvIDFCpGkhKuzL-uzbpQrf3nHNfLOK21riNssQ5szMT7PS7EaZHaTvId2y3zlNv6zIT3xV-0MGvPZfn5XD_DiqO-q1BkCXrtDMeTPFUrFMoQFHOoFEWr3KSUjk3BUAIQgUQRloE8KgnAvb-AL6uNsI:1pYPgS:Ac9ajnmCxi-NKmbCGSd-004GAvwcZPaTPIL0yCSZGUg",
+    "expire_date": "2023-03-18T11:04:12.157Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qk5ksftcyjktgdq2c84u13gnrjy4wzmt",
+  "fields": {
+    "session_data": ".eJxVjLsOgkAUBf9la7Phsi-0tOcbNve1ghpIWKiM_64kFNqemTkvk3Fbh7xVXfIo5mIgmNPvSMgPnXYid5xus-V5WpeR7K7Yg1bbz6LP6-H-HQxYh2-t2jjP8UwBS4KuUCPBceujRkjJJ4IuigMSEA3sURlLKdgFTsFhC-b9ARi1OMA:1pdN1u:rFlHrSgKM61HFCDjrZSZdTJhUtEPDtH1B84bbtcHpUI",
+    "expire_date": "2023-04-01T03:14:50.573Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rhuye71lhasx2ytapgu0l7abquug053f",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQRP-FsyHAImw9evcbyMJSqRpISnsy_rtt0oMeZ96beYtA61LC2vMcJhYXYcTpt4uUnrnugB9U702mVpd5inJX5EG7vDXOr-vh_h0U6mVbk9VODSpzjoiMPiEQA2AajXGAoGzM0VmyTlvnzwCJ9ZaVNyNa0IP4fAHTaTbj:1pVnW0:hkgIaDsAl6KhOu-d3NYelOT778iEeUxVqL344cs2O2o",
+    "expire_date": "2023-03-11T05:54:36.275Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vyv370yqmtt68e5fyhr3336jtj5tpag0",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDG1y69xvIDFCpGkhKuzL-uzbpQrf3nHNfLOK21riNssQ5szMT7PS7EaZHaTvId2y3zlNv6zIT3xV-0MGvPZfn5XD_DiqO-q1BkCXrtDMeTPFUrFMoQFHOoFEWr3KSUjk3BUAIQgUQRloE8KgnAvb-AL6uNsI:1pVmJj:I4wlPwvsWBgKDOTlXLUfx8LjH6hqe8U0-YIUrLIiITk",
+    "expire_date": "2023-03-11T04:37:51.935Z"
+  }
+},
+{
+  "model": "myapp.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$390000$NYP1hrMuYJxX9IiaqFaqWM$IIjHoXykv8oGcbw6zTnCyULOxyimlQ/r7vZ3fbQS7kU=",
+    "last_login": "2023-03-18T02:34:11.070Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-02-24T02:59:58.775Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "myapp.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$390000$dg5KDCnZuUR54Nwc7L245C$A7tughWU04CwlWL8Q8Ku4jYeYXKoxQGL1yDr7QL0Z9M=",
+    "last_login": "2023-03-18T02:35:07.169Z",
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-02-25T05:03:29Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "myapp.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$390000$Fbwg61EM8oeTQRYMvgS8Mo$kJ/IpkH8PcmE/6i2QTea/hCi8Y6u/d3WRtb19Ciqgfk=",
+    "last_login": "2023-03-18T03:14:50.570Z",
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-03-17T15:26:29Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "myapp.tags",
+  "pk": 5,
+  "fields": {
+    "name": "user2 tag1",
+    "created": "2023-03-06T23:53:18.287Z",
+    "author_id": [
+      "user2"
+    ]
+  }
+},
+{
+  "model": "myapp.tags",
+  "pk": 11,
+  "fields": {
+    "name": "тэг 2 user2",
+    "created": "2023-03-16T20:15:37.217Z",
+    "author_id": [
+      "user2"
+    ]
+  }
+},
+{
+  "model": "myapp.tags",
+  "pk": 16,
+  "fields": {
+    "name": "нравится",
+    "created": "2023-03-17T15:34:32.958Z",
+    "author_id": [
+      "user3"
+    ]
+  }
+},
+{
+  "model": "myapp.tags",
+  "pk": 17,
+  "fields": {
+    "name": "редко",
+    "created": "2023-03-17T15:34:40.311Z",
+    "author_id": [
+      "user3"
+    ]
+  }
+},
+{
+  "model": "myapp.tags",
+  "pk": 18,
+  "fields": {
+    "name": "срочно",
+    "created": "2023-03-17T19:08:08.163Z",
+    "author_id": [
+      "user3"
+    ]
+  }
+},
+{
+  "model": "myapp.groups",
+  "pk": 4,
+  "fields": {
+    "name": "user2 первая",
+    "content": "user2 тестовая первая группа",
+    "created": "2023-03-05T13:56:25.081Z",
+    "author_id": [
+      "user2"
+    ]
+  }
+},
+{
+  "model": "myapp.groups",
+  "pk": 5,
+  "fields": {
+    "name": "user2 вторая",
+    "content": "user2 тестовая вторая группа",
+    "created": "2023-03-07T14:31:12.481Z",
+    "author_id": [
+      "user2"
+    ]
+  }
+},
+{
+  "model": "myapp.groups",
+  "pk": 8,
+  "fields": {
+    "name": "группа Отдых",
+    "content": "заметки о местах отдыха",
+    "created": "2023-03-17T15:27:34.236Z",
+    "author_id": [
+      "user3"
+    ]
+  }
+},
+{
+  "model": "myapp.groups",
+  "pk": 9,
+  "fields": {
+    "name": "группа работа",
+    "content": "заметки о полезном для работы",
+    "created": "2023-03-17T19:06:20.638Z",
+    "author_id": [
+      "user3"
+    ]
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 16,
+  "fields": {
+    "created": "2023-03-05T00:12:20.994Z",
+    "modified": "2023-03-08T00:15:16.236Z",
+    "title": "PUT note user2",
+    "content": "set group id no",
+    "author_id": [
+      "user2"
+    ],
+    "group_id": null,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 20,
+  "fields": {
+    "created": "2023-03-06T23:46:42.188Z",
+    "modified": "2023-03-18T02:29:34.190Z",
+    "title": "третья заметка user2",
+    "content": "какая-то информация",
+    "author_id": [
+      "user2"
+    ],
+    "group_id": 4,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 21,
+  "fields": {
+    "created": "2023-03-07T14:25:57.742Z",
+    "modified": "2023-03-07T23:10:37.752Z",
+    "title": "PUT note user2",
+    "content": "set group id no",
+    "author_id": [
+      "user2"
+    ],
+    "group_id": null,
+    "tags": []
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 22,
+  "fields": {
+    "created": "2023-03-07T14:50:28.356Z",
+    "modified": "2023-03-07T14:50:28.356Z",
+    "title": "user2 POST",
+    "content": "some data",
+    "author_id": [
+      "user2"
+    ],
+    "group_id": null,
+    "tags": []
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 23,
+  "fields": {
+    "created": "2023-03-07T14:51:03.106Z",
+    "modified": "2023-03-07T14:51:03.106Z",
+    "title": "user2 POST",
+    "content": "some data",
+    "author_id": [
+      "user2"
+    ],
+    "group_id": null,
+    "tags": []
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 31,
+  "fields": {
+    "created": "2023-03-15T12:23:49.701Z",
+    "modified": "2023-03-18T02:30:01.140Z",
+    "title": "вторая заметка user2",
+    "content": "заметка с переносом \nстроки",
+    "author_id": [
+      "user2"
+    ],
+    "group_id": 4,
+    "tags": [
+      11
+    ]
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 32,
+  "fields": {
+    "created": "2023-03-15T14:43:17.538Z",
+    "modified": "2023-03-18T02:29:41.255Z",
+    "title": "первая заметка user2",
+    "content": "текст заметки user2",
+    "author_id": [
+      "user2"
+    ],
+    "group_id": 4,
+    "tags": [
+      11
+    ]
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 33,
+  "fields": {
+    "created": "2023-03-17T15:28:03.583Z",
+    "modified": "2023-03-17T19:07:00.182Z",
+    "title": "авиабилеты",
+    "content": "авиакомпания Сибирь",
+    "author_id": [
+      "user3"
+    ],
+    "group_id": 8,
+    "tags": [
+      16,
+      17
+    ]
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 34,
+  "fields": {
+    "created": "2023-03-17T19:07:28.329Z",
+    "modified": "2023-03-17T19:07:28.329Z",
+    "title": "ж/д билеты",
+    "content": "Новосбирский ж/д вокзал",
+    "author_id": [
+      "user3"
+    ],
+    "group_id": 8,
+    "tags": []
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 35,
+  "fields": {
+    "created": "2023-03-17T19:08:53.193Z",
+    "modified": "2023-03-17T19:09:02.200Z",
+    "title": "автоматизация",
+    "content": "python",
+    "author_id": [
+      "user3"
+    ],
+    "group_id": 9,
+    "tags": [
+      16,
+      18
+    ]
+  }
+},
+{
+  "model": "myapp.notes",
+  "pk": 36,
+  "fields": {
+    "created": "2023-03-17T19:09:39.297Z",
+    "modified": "2023-03-17T19:09:47.002Z",
+    "title": "анализ",
+    "content": "xmind",
+    "author_id": [
+      "user3"
+    ],
+    "group_id": 9,
+    "tags": [
+      16,
+      17
+    ]
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2023-02-25T05:02:11.206Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "customuser"
+    ],
+    "object_id": "2",
+    "object_repr": "user1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2023-02-25T05:03:42.149Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "customuser"
+    ],
+    "object_id": "3",
+    "object_repr": "user2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2023-03-04T11:05:31.874Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "1",
+    "object_repr": "1 | user1 tag1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2023-03-04T11:06:13.660Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "1",
+    "object_repr": "1 | user1 group1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2023-03-04T11:06:17.500Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "14",
+    "object_repr": "14 | user1 | some data",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2023-03-04T11:07:10.139Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "15",
+    "object_repr": "15 | user1 | adfasdfasdf\r\nasdfasdfasdf",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2023-03-05T00:12:21.004Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "16",
+    "object_repr": "16 | user2 | dghdjtyw",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2023-03-05T00:12:47.541Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "1",
+    "object_repr": "1 | user1 tag1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2023-03-05T00:18:38.311Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "17",
+    "object_repr": "17 | user2 | fgfsgsdfg\r\nfgsdfgsdfg",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2023-03-05T00:19:09.043Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "2",
+    "object_repr": "2 | user1 tag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2023-03-05T00:19:26.227Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "15",
+    "object_repr": "15 | user1 | adfasdfasdf\r\nasdfasdfasdf",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2023-03-05T00:20:00.474Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "3",
+    "object_repr": "3 | user2 tag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2023-03-05T00:21:44.037Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "17",
+    "object_repr": "17 | user2 | fgfsgsdfg\r\nfgsdfgsdfg",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2023-03-05T00:21:52.785Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "15",
+    "object_repr": "15 | user1 | adfasdfasdf\r\nasdfasdfasdf",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2023-03-05T00:22:26.716Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "17",
+    "object_repr": "17 | user2 | fgfsgsdfg\r\nfgsdfgsdfg",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2023-03-05T00:23:27.535Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "2",
+    "object_repr": "2 | user1 tag",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2023-03-05T00:23:57.781Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "17",
+    "object_repr": "17 | user2 | fgfsgsdfg\r\nfgsdfgsdfg",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2023-03-05T00:29:52.555Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "16",
+    "object_repr": "16 | user2 | dghdjtyw",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2023-03-05T00:30:23.056Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "4",
+    "object_repr": "4 | user1 tag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2023-03-05T00:30:31.103Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "18",
+    "object_repr": "18 | user1 | gjguyfguyfuy",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2023-03-05T00:30:54.871Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "19",
+    "object_repr": "19 | user1 | no tag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2023-03-05T00:31:33.783Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "3",
+    "object_repr": "3 | user2 tag",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2023-03-05T00:32:04.643Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "18",
+    "object_repr": "18 | user1 | gjguyfguyfuy",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2023-03-05T09:11:21.713Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "2",
+    "object_repr": "2 | user2 group",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2023-03-05T13:54:44.925Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "1",
+    "object_repr": "1 | Работа user1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Content\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2023-03-05T13:55:19.458Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "2",
+    "object_repr": "2 | Учёба user2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Content\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2023-03-05T13:55:47.233Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "3",
+    "object_repr": "3 | Путешествия user",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2023-03-05T13:56:25.083Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "4",
+    "object_repr": "4 | user2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2023-03-05T13:57:48.409Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "3",
+    "object_repr": "3 | Путешестви user1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2023-03-05T13:57:57.598Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "groups"
+    ],
+    "object_id": "2",
+    "object_repr": "2 | Учёба user1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"\\u041f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044c\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2023-03-06T23:53:18.289Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "5",
+    "object_repr": "5 | user2 tag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2023-03-06T23:53:43.527Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "20",
+    "object_repr": "20 | user2 | some data",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\", \"Group id\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2023-03-07T00:48:16.364Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "20",
+    "object_repr": "20 | user2 | some data",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2023-03-08T00:14:36.420Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "6",
+    "object_repr": "6 | user2 tag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2023-03-08T09:29:26.006Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "26",
+    "object_repr": "26 | user1 | some data",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Group id\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2023-03-08T09:29:48.525Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "19",
+    "object_repr": "19 | user1 | no tag",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Group id\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2023-03-08T10:00:36.845Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "7",
+    "object_repr": "7 | гыук1 ефп",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2023-03-08T10:00:50.686Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "tags"
+    ],
+    "object_id": "8",
+    "object_repr": "8 | user1 tag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2023-03-10T14:16:56.992Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "notes"
+    ],
+    "object_id": "30",
+    "object_repr": "30 | user1 | axios POST",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2023-03-17T15:26:46.903Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "customuser"
+    ],
+    "object_id": "15",
+    "object_repr": "user3",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2023-03-18T02:34:35.253Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "myapp",
+      "customuser"
+    ],
+    "object_id": "2",
+    "object_repr": "user1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]
