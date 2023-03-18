@@ -2,18 +2,22 @@ from django.db import models
 from django.conf import settings
 from django_extensions.db.models import TimeStampedModel
 from django.contrib.auth.models import AbstractUser
+
+
 # Create your models here.
 class CustomUser(AbstractUser):
     pass
 
+
 class Tags(models.Model):
     """Тэги к заметкам."""
+
     name = models.CharField(max_length=16)
     created = models.DateTimeField(auto_now_add=True)
     author_id = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         #        default=1,
-        verbose_name='Пользователь',
+        verbose_name="Пользователь",
         on_delete=models.CASCADE,
         null=False,
         blank=False,
@@ -21,25 +25,29 @@ class Tags(models.Model):
         # имя, по которому через точку из объекта пользователя можно будет обратиться к списку его заметок
         help_text="Тэги пользователя",  # текст для человека
     )
+
     def __str__(self):
         """переопределение строкового представления объекта."""
         return f"{self.id} | {self.name}"
+
     class Meta:
         """установка дополнительных параметров модели"""
 
         verbose_name_plural = "Tags"
-        ordering = ['created']
+        ordering = ["created"]
+
 
 class Groups(models.Model):
     """Группы(типа папок) к заметкам. В принципе они аналогичны тэгам, но будут
     использоваться для иерархического группирования"""
+
     name = models.CharField(max_length=16)
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     author_id = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         #        default=1,
-        verbose_name='Пользователь',
+        verbose_name="Пользователь",
         on_delete=models.CASCADE,
         null=False,
         blank=False,
@@ -47,28 +55,32 @@ class Groups(models.Model):
         # имя, по которому через точку из объекта пользователя можно будет обратиться к списку его групп
         help_text="Группы пользователя",  # текст для человека
     )
+
     def __str__(self):
         """переопределение строкового представления объекта."""
         return f"{self.id} | {self.name}"
+
     class Meta:
         """установка дополнительных параметров модели"""
 
         verbose_name_plural = "Groups"
-        ordering = ['created']
+        ordering = ["created"]
+
 
 class Notes(TimeStampedModel):
     """Таблица заметок"""
-#    note = models.CharField(max_length=128)
+
+    #    note = models.CharField(max_length=128)
     title = models.CharField(max_length=64)
     content = models.TextField()
     author_id = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-#        default=1,
-        verbose_name='Пользователь',
+        #        default=1,
+        verbose_name="Пользователь",
         on_delete=models.CASCADE,
         null=False,
         blank=False,
-        related_name="user_notes", # имя, по которому через точку из объекта пользователя можно будет обратиться к списку его заметок
+        related_name="user_notes",  # имя, по которому через точку из объекта пользователя можно будет обратиться к списку его заметок
         help_text="Заметки пользователя",  # текст для человека
     )
     # tag_id = models.ForeignKey(
@@ -84,7 +96,7 @@ class Notes(TimeStampedModel):
         Tags,
         blank=True,
         null=True,  # для исключения сообщиения об обязательном значении в этом поле при добавлении заметки в админской панели.
-        #даже при этих установках в таблице many-to-many полностью запись удаляется при удалении одной из связанных записей
+        # даже при этих установках в таблице many-to-many полностью запись удаляется при удалении одной из связанных записей
         related_name="notes_by_tag",
         # имя, по которому через точку из объекта класса Tag можно будет обратиться к списку заметок
         help_text="Тэги заметок",  # текст для человека
@@ -101,6 +113,7 @@ class Notes(TimeStampedModel):
     def __str__(self):
         """переопределение строкового представления объекта."""
         return f"{self.id} | {self.author_id} | {self.content}"
+
     class Meta:
         """установка дополнительных параметров модели"""
 
@@ -121,15 +134,16 @@ class Notes(TimeStampedModel):
     #     else:
     #         return Products.get_all_products()
 
+
 #    slug = AutoSlugField(populate_from='title')
 #    image = models.ImageField(upload_to ='uploads/', blank=True, null=True)
 
-    # def slugify_function(self, content):
-    #     return content.replace('_', '-').lower()
+# def slugify_function(self, content):
+#     return content.replace('_', '-').lower()
 
-    # @property
-    # def read_only_field(self):
-    #     return getattr(self.author, "last_name", None)
+# @property
+# def read_only_field(self):
+#     return getattr(self.author, "last_name", None)
 
 
 # class Comment(models.Model):

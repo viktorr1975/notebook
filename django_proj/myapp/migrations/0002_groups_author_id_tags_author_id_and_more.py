@@ -6,32 +6,59 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('myapp', '0001_initial'),
+        ("myapp", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='groups',
-            name='author_id',
-            field=models.ForeignKey(default='1', help_text='Группы пользователя', on_delete=django.db.models.deletion.CASCADE, related_name='user_groups', to=settings.AUTH_USER_MODEL, verbose_name='Пользователь'),
+            model_name="groups",
+            name="author_id",
+            field=models.ForeignKey(
+                default="1",
+                help_text="Группы пользователя",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_groups",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Пользователь",
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='tags',
-            name='author_id',
-            field=models.ForeignKey(default=1, help_text='Тэги пользователя', on_delete=django.db.models.deletion.CASCADE, related_name='user_tags', to=settings.AUTH_USER_MODEL, verbose_name='Пользователь'),
+            model_name="tags",
+            name="author_id",
+            field=models.ForeignKey(
+                default=1,
+                help_text="Тэги пользователя",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_tags",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Пользователь",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='notes',
-            name='author_id',
-            field=models.ForeignKey(help_text='Заметки пользователя', on_delete=django.db.models.deletion.CASCADE, related_name='user_notes', to=settings.AUTH_USER_MODEL, verbose_name='Пользователь'),
+            model_name="notes",
+            name="author_id",
+            field=models.ForeignKey(
+                help_text="Заметки пользователя",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_notes",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Пользователь",
+            ),
         ),
         migrations.AlterField(
-            model_name='notes',
-            name='tag_id',
-            field=models.ForeignKey(blank=True, help_text='Тэг для заметки', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='user_tags', to='myapp.tags', verbose_name='тэги пользователя'),
+            model_name="notes",
+            name="tag_id",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Тэг для заметки",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="user_tags",
+                to="myapp.tags",
+                verbose_name="тэги пользователя",
+            ),
         ),
     ]

@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from .models import Notes, Groups, Tags, CustomUser
 from django.contrib.auth import get_user_model
-#from drf_extra_fields.fields import Base64ImageField
 
+# from drf_extra_fields.fields import Base64ImageField
 
 
 class NonModelSerializer(serializers.Serializer):
@@ -27,29 +27,47 @@ class NotesSerializer(serializers.ModelSerializer):
     # author = UserSerializer()
 
     # image = Base64ImageField()
-    author_id = serializers.HiddenField(default=serializers.CurrentUserDefault())   #работает только на десериализацию(сохранение)
-    #author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
+    author_id = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )  # работает только на десериализацию(сохранение)
+
+    # author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
     class Meta:
         model = Notes
         read_only_fields = ["id", "created", "modified"]
-        fields = read_only_fields + ["title", "content", "author_id", "group_id", "tags"]
-
+        fields = read_only_fields + [
+            "title",
+            "content",
+            "author_id",
+            "group_id",
+            "tags",
+        ]
 
         # fields = "__all__"
         # fields = ("id", "title", "content", "author")
         # exclude = []
         # fields = ("id", "title", "content", "article_comments", "author", "read_only_field", "slug", "image", "created", "modified", )
 
-    def validate_group_id(self, value): #проверим, чтобы группа принадлежала пользователю (при сохранении вахно)
-        if value:   #not None (JSON null)
-            if CustomUser.objects.all().filter(id=value.author_id_id)[0] != self.context['request'].user:
+    def validate_group_id(
+        self, value
+    ):  # проверим, чтобы группа принадлежала пользователю (при сохранении вахно)
+        if value:  # not None (JSON null)
+            if (
+                CustomUser.objects.all().filter(id=value.author_id_id)[0]
+                != self.context["request"].user
+            ):
                 raise serializers.ValidationError("Группа пользователю не принадлежит")
         return value
 
-    def validate_tags(self, value): #проверим, чтобы тэги принадлежали пользователю (при сохранении вахно)
-        if value:   #not None (JSON null)
+    def validate_tags(
+        self, value
+    ):  # проверим, чтобы тэги принадлежали пользователю (при сохранении вахно)
+        if value:  # not None (JSON null)
             for tag in value:
-                if CustomUser.objects.all().filter(id=tag.author_id_id)[0] != self.context['request'].user:
+                if (
+                    CustomUser.objects.all().filter(id=tag.author_id_id)[0]
+                    != self.context["request"].user
+                ):
                     raise serializers.ValidationError("Тэг пользователю не принадлежит")
         return value
 
@@ -90,24 +108,30 @@ class NotesSerializer(serializers.ModelSerializer):
 class GroupsSerializer(serializers.ModelSerializer):
     """Сериализатор по модели Groups"""
 
-    #group_notes = serializers.PrimaryKeyRelatedField(queryset=CustomUser.objects.all().filter(id=3), many=False) #не рабочее поле
+    # group_notes = serializers.PrimaryKeyRelatedField(queryset=CustomUser.objects.all().filter(id=3), many=False) #не рабочее поле
     # article_comments = CommentSerializer(many=True)
     # author = serializers.CharField(source='author.username', default=None)
     # author = UserSerializer()
 
+    author_id = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )  # работает только на десериализацию(сохранение)
 
-    author_id = serializers.HiddenField(default=serializers.CurrentUserDefault())   #работает только на десериализацию(сохранение)
-    #author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
+    # author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
     class Meta:
         model = Groups
         read_only_fields = ["id", "created"]
         fields = read_only_fields + ["name", "content", "author_id"]
 
+
 class TagsSerializer(serializers.ModelSerializer):
     """Сериализатор по модели Tags"""
 
-    author_id = serializers.HiddenField(default=serializers.CurrentUserDefault())   #работает только на десериализацию(сохранение)
-    #author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
+    author_id = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )  # работает только на десериализацию(сохранение)
+
+    # author_id = serializers.ReadOnlyField(source="author_id.username")      #при таком варианте надо ViewSet.create(): serializer.save(author_id=self.request.user)
     class Meta:
         model = Tags
         read_only_fields = ["id", "created"]

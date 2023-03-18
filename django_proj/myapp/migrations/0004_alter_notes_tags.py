@@ -4,15 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('myapp', '0003_alter_groups_options_alter_tags_options_and_more'),
+        ("myapp", "0003_alter_groups_options_alter_tags_options_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='notes',
-            name='tags',
-            field=models.ManyToManyField(blank=True, help_text='Тэги заметок', null=True, related_name='notes_by_tag', to='myapp.tags'),
+            model_name="notes",
+            name="tags",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Тэги заметок",
+                null=True,
+                related_name="notes_by_tag",
+                to="myapp.tags",
+            ),
         ),
     ]
